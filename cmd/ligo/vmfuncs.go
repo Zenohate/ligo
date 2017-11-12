@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"plugin"
 
-	"github.com/aki237/ligo/pkg/ligo"
+	"github.com/Zenohate/ligo/pkg/ligo"
 )
 
 // VMRequire function is a ligo.InBuilt that is used to load a package.

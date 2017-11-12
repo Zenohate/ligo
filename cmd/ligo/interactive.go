@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/aki237/ligo/pkg/ligo"
+	"github.com/Zenohate/ligo/pkg/ligo"
 	"github.com/chzyer/readline"
 	"github.com/fatih/color"
 )
@@ -48,6 +48,7 @@ func runInteractive(vm *ligo.VM) {
 			continue
 		}
 		if expression == "" && part[0] != '(' {
+			part="("+part+")"
 			v, err := vm.Eval(part)
 			if err != nil {
 				fmt.Printf("Error in the expression passed : %s\n", errorFmt.Sprintf("%s", err))
@@ -97,7 +98,11 @@ func loadRCFile(vm *ligo.VM) {
 }
 
 func getPrompt(vm *ligo.VM) string {
-	defaultPrompt := ">>> "
+	dir, err := os.Getwd()
+	if err != nil {
+		log.Fatal(err)
+	}
+	defaultPrompt := dir+" >ligo> "
 	ps1, ok := vm.Vars["PS1"]
 	if !ok {
 		vm.Vars["PS1"] = ligo.Variable{Type: ligo.TypeString, Value: defaultPrompt}

@@ -6,7 +6,7 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/aki237/ligo/pkg/ligo"
+	"github.com/Zenohate/ligo/pkg/ligo"
 )
 
 var versionString = "0.0.1"

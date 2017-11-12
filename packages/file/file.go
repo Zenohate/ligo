@@ -5,7 +5,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/aki237/ligo/pkg/ligo"
+	"github.com/Zenohate/ligo/pkg/ligo"
 )
 
 // PluginInit function is the plugin initializer for the file package
