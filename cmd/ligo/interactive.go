@@ -99,8 +99,9 @@ func loadRCFile(vm *ligo.VM) {
 
 func getPrompt(vm *ligo.VM) string {
 	dir, err := os.Getwd()
+	var defaultLog
 	if err != nil {
-		log.Fatal(err)
+		defaultPrompt := "? >ligo> "
 	}
 	defaultPrompt := dir+" >ligo> "
 	ps1, ok := vm.Vars["PS1"]
